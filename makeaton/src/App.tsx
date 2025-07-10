@@ -1,6 +1,8 @@
 import './App.css'
 import webviewImage from '../assets/webview.png'
 import brushstrokeImage from '../assets/brushstroke.png'
+import kathakaliImage from '../assets/kathakali.png'
+import circleTextImage from '../assets/circle-text.png'
 
 function App() {
   return (
@@ -21,6 +23,21 @@ function App() {
           Hackathon
         </span>
       </p>
+      <img 
+        src={circleTextImage} 
+        alt="Circle Text" 
+        className="circle-text"
+      />
+      <img 
+        src={kathakaliImage} 
+        alt="Kathakali Shadow" 
+        className="kathakali-shadow"
+      />
+      <img 
+        src={kathakaliImage} 
+        alt="Kathakali" 
+        className="kathakali-image"
+      />
     </div>
   )
 }

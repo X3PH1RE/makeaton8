@@ -24,6 +24,7 @@
   padding: 0;
   max-width: none;
   text-align: left;
+  overflow-x: hidden;
 }
 
 .logo {
@@ -68,6 +69,7 @@
   margin: 0;
   padding: 0;
   position: relative;
+  overflow-x: hidden;
 }
 
 .background-image {
@@ -131,6 +133,66 @@
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.7;
+  opacity: 0.6;
   z-index: -1;
+}
+
+.circle-text {
+  position: absolute;
+  right: -3%;
+  top: 4.9%;
+  scale: 2;
+  width: clamp(120px, 35vw, 400px);
+  height: auto;
+  z-index: 998;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  draggable: false;
+  animation: rotate 35s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.kathakali-shadow {
+  position: absolute;
+  right: -1%;
+  top: 5%;
+  scale: 1.7;
+  width: clamp(95px, 32vw, 370px);
+  height: auto;
+  z-index: 999;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  draggable: false;
+  filter: brightness(1);
+  opacity: 0.1;
+}
+
+.kathakali-image {
+  position: absolute;
+  right: 0%;
+  top: 5%;
+  scale: 1.5;
+  width: clamp(90px, 30vw, 350px);
+  height: auto;
+  z-index: 1000;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  draggable: false;
 }
