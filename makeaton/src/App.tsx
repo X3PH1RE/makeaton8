@@ -1,6 +1,5 @@
 import './App.css'
 import webviewImage from '../assets/webview.png'
-import brushstrokeImage from '../assets/brushstroke.png'
 import kathakaliImage from '../assets/kathakali.png'
 import circleTextImage from '../assets/circle-text.png'
 
