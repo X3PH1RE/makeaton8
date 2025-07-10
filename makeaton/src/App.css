@@ -1,0 +1,136 @@
+@font-face {
+  font-family: 'Swistblnk Moalang Melintang';
+  src: url('./assets/fonts/Swistblnk Moalang Melintang.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Canicule Display';
+  src: url('./assets/fonts/CaniculeDisplay.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PlaylistScript';
+  src: url('./assets/fonts/PlaylistScript.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+  max-width: none;
+  text-align: left;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.background-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  draggable: false;
+}
+
+.make-a-ton-text {
+  font-family: 'Swistblnk Moalang Melintang', serif;
+  color: #E8DBCC;
+  font-size: clamp(2rem, 14vw, 14rem);
+  font-weight: normal;
+  position: absolute;
+  left: 8%;
+  top: 4.5%;
+  transform: translateY(-50%);
+  margin: 0;
+  z-index: 1000;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  line-height: 0.9;
+}
+
+.hackathon-subtitle {
+  font-family: 'PlaylistScript', cursive;
+  color: #E8DBCC;
+  font-size: clamp(0.5rem, 3vw, 3rem);
+  font-weight: normal;
+  position: absolute;
+  left: 8%;
+  top: 9%;
+  margin: 0;
+  z-index: 1000;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  line-height: 1.2;
+}
+
+.hackathon-word {
+  position: relative;
+  display: inline-block;
+  padding: 0.2em 0.3em;
+  z-index: 999;
+}
+
+.hackathon-word::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../assets/brushstroke.png');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+  z-index: -1;
+}
