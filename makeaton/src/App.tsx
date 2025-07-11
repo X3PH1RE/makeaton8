@@ -14,7 +14,7 @@ function App() {
       <h1 className="make-a-ton-text">
         Make<br />
         A<br />
-        Ton
+        Ton <span className="version-text">8.0</span>
       </h1>
       <p className="hackathon-subtitle">
         South India's Biggest{' '}

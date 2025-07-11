@@ -196,3 +196,16 @@
   -ms-user-select: none;
   draggable: false;
 }
+
+.version-text {
+  position: absolute;
+  right: -0.5em;
+  top: 5.7em;
+  color: #E8DBCC;
+  font-size: 0.4em;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  width: 1.5em;
+  text-align: center;
+  font-family: 'PlaylistScript', cursive;
+}
