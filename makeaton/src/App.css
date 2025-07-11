@@ -144,7 +144,7 @@
   scale: 2;
   width: clamp(120px, 35vw, 400px);
   height: auto;
-  z-index: 998;
+  z-index: 1001;
   pointer-events: none;
   user-select: none;
   -webkit-user-drag: none;
