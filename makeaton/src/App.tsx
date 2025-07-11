@@ -22,6 +22,7 @@ function App() {
           Hackathon
         </span>
       </p>
+      <div className="prizes-text">Prizes</div>
       <img 
         src={circleTextImage} 
         alt="Circle Text" 
