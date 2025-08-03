@@ -2,6 +2,7 @@ import './App.css'
 import webviewImage from '../assets/webview.png'
 import kathakaliImage from '../assets/kathakali.png'
 import circleTextImage from '../assets/circle-text.png'
+import MagicBento from './MagicBento'
 
 function App() {
   return (
@@ -22,7 +23,22 @@ function App() {
           Hackathon
         </span>
       </p>
-      <div className="prizes-text">Prizes</div>
+            <div className="prizes-text">Prizes</div>
+      <div className="activities-section">
+        <h2 className="activities-heading">Activities and Events</h2>
+        <MagicBento 
+          textAutoHide={true}
+          enableStars={true}
+          enableSpotlight={true}
+          enableBorderGlow={true}
+          enableTilt={true}
+          enableMagnetism={true}
+          clickEffect={true}
+          spotlightRadius={300}
+          particleCount={12}
+          glowColor="92, 0, 35"
+        />
+      </div>
       <img 
         src={circleTextImage} 
         alt="Circle Text" 
