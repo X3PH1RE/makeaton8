@@ -2,9 +2,46 @@ import './App.css'
 import webviewImage from '../assets/webview.png'
 import kathakaliImage from '../assets/kathakali.png'
 import circleTextImage from '../assets/circle-text.png'
+import sponsor1 from '../assets/treasue 1.png'
+import sponsor2 from '../assets/treasure 2.png'
+import sponsor3 from '../assets/treasure 3.png'
 import MagicBento from './MagicBento'
+import { useState } from 'react'
 
 function App() {
+  const [activeFaq, setActiveFaq] = useState<number | null>(null);
+
+  const toggleFaq = (index: number) => {
+    setActiveFaq(activeFaq === index ? null : index);
+  };
+
+  const faqData = [
+    {
+      question: "What is Make A Ton?",
+      answer: "Make A Ton is South India's biggest hackathon, bringing together developers, designers, and innovators to create amazing solutions in just 24 hours."
+    },
+    {
+      question: "Who can participate?",
+      answer: "Students from any college or university can participate. Teams can have 2-4 members. Both beginners and experienced developers are welcome!"
+    },
+    {
+      question: "What are the prizes?",
+      answer: "Total prize pool worth ₹10+ Lakhs! Cash prizes, gadgets, internships, and amazing opportunities await the winners."
+    },
+    {
+      question: "How do I register?",
+      answer: "Registration opens soon! Follow our social media for updates. You can register as a team or individually and we'll help you find teammates."
+    },
+    {
+      question: "What should I bring?",
+      answer: "Your laptop, charger, and enthusiasm! We'll provide food, drinks, and a great workspace. Don't forget your ID cards."
+    },
+    {
+      question: "Is it free to participate?",
+      answer: "Yes! Make A Ton is completely free to participate. We cover all costs including food, workspace, and amazing prizes."
+    }
+  ];
+
   return (
     <div className="app-container">
       <img 
@@ -39,6 +76,36 @@ function App() {
           glowColor="92, 0, 35"
         />
       </div>
+      <div className="previos-sponsors">
+        <h2 className="previos-sponsors-heading">Previous Sponsors</h2>
+        <div className="previos-sponsors-logos">
+          <img src={sponsor1} alt="Sponsor 1" />
+          <img src={sponsor2} alt="Sponsor 2" />
+          <img src={sponsor3} alt="Sponsor 3" />
+        </div>
+      </div>
+      
+      <div className="faq-section">
+        <h2 className="faq-heading">FAQs</h2>
+        <div className="faq-container">
+          {faqData.map((faq, index) => (
+            <div 
+              key={index}
+              className={`faq-item ${activeFaq === index ? 'active' : ''}`}
+              onClick={() => toggleFaq(index)}
+            >
+              <div className="faq-question">
+                <h3>{faq.question}</h3>
+                <span className="faq-toggle">{activeFaq === index ? '−' : '+'}</span>
+              </div>
+              <div className="faq-answer">
+                <p>{faq.answer}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      
       <img 
         src={circleTextImage} 
         alt="Circle Text" 
