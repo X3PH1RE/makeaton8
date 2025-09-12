@@ -19,6 +19,34 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Magz';
+  src: url('./assets/fonts/Magz.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Owned';
+  src: url('./assets/fonts/owned.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Racama';
+  src: url('./assets/fonts/Racama.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'YesevaOne';
+  src: url('./assets/fonts/YesevaOne-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 #root {
   margin: 0;
   padding: 0;
@@ -128,6 +156,212 @@
   z-index: 1000;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   line-height: 1.2;
+}
+
+.festival-quote {
+  font-family: 'YesevaOne', serif;
+  color: #5C0023;
+  font-size: clamp(1.5rem, 4vw, 6rem);
+  font-weight: normal;
+  position: absolute;
+  left: 4%;
+  top: 25%;
+  margin: 0;
+  z-index: 1000;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  line-height: 1.4;
+  max-width: 90%;
+}
+
+.about-text {
+  position: absolute;
+  left: 6%;
+  top: 29%;
+  max-width: 88%;
+  z-index: 1000;
+  color: #5C0023;
+  font-family: 'Racama', serif;
+  font-size: clamp(0.9rem, 1.6vw, 1.2rem);
+  line-height: 1.6;
+}
+
+.about-text p {
+  margin: 0 0 1rem 0;
+}
+
+/* Enhanced About section styles */
+.about-text {
+  background: rgba(232, 219, 204, 0.25);
+  border: 2px solid rgba(92, 0, 35, 0.2);
+  border-radius: 16px;
+  padding: clamp(0.75rem, 2vw, 1.25rem);
+  box-shadow: 0 12px 40px rgba(92, 0, 35, 0.15);
+  backdrop-filter: blur(2px);
+}
+
+.about-text p:first-child::first-letter {
+  font-family: 'YesevaOne', serif;
+  font-weight: 700;
+  font-size: 2.5em;
+  line-height: 0.9;
+  margin-right: 0.08em;
+  float: left;
+  color: #5C0023;
+  text-shadow: 0 2px 8px rgba(92, 0, 35, 0.15);
+}
+
+.about-text::before {
+  content: "\201C";
+  position: absolute;
+  top: -0.6em;
+  left: -0.1em;
+  font-family: 'YesevaOne', serif;
+  font-size: clamp(3rem, 6vw, 5rem);
+  color: rgba(92, 0, 35, 0.15);
+  transform: rotate(-4deg);
+}
+
+.about-highlight {
+  position: relative;
+  font-weight: 700;
+}
+
+.about-highlight::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.05em;
+  height: 0.45em;
+  background-image: url('../assets/brushstroke.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  z-index: -1;
+}
+
+.about-accent {
+  background: linear-gradient(180deg, rgba(92, 0, 35, 1) 0%, rgba(92, 0, 35, 0.8) 60%, rgba(92, 0, 35, 0.6) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 12px rgba(92, 0, 35, 0.15);
+  font-weight: 800;
+}
+
+.about-chip {
+  display: inline-block;
+  padding: 0.15em 0.5em;
+  margin: 0 0.1em;
+  border-radius: 999px;
+  border: 1px solid rgba(92, 0, 35, 0.25);
+  background: rgba(232, 219, 204, 0.6);
+  box-shadow: 0 6px 20px rgba(92, 0, 35, 0.12);
+  font-family: 'Racama', serif;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.about-text p { opacity: 0; animation: fadeUp 0.7s ease forwards; }
+.about-text p:nth-child(1) { animation-delay: 0.05s; }
+.about-text p:nth-child(2) { animation-delay: 0.18s; }
+.about-text p:nth-child(3) { animation-delay: 0.31s; }
+.about-text p:nth-child(4) { animation-delay: 0.44s; }
+
+@media (max-width: 768px) {
+  .about-text {
+    left: 4%;
+    top: 36%;
+    max-width: 92%;
+    padding: 0.9rem;
+  }
+}
+
+/* Infinite scrolling banner below about */
+.scroll-banner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 40%;
+  height: clamp(28px, 5vw, 50px);
+  background-image: url('../assets/Tracks and Prizes coming soon... Tracks and Prizes coming soon... Tracks and Prizes coming soon... Tracks and Prizes coming soon....png');
+  background-size: auto 100%;
+  background-repeat: repeat-x;
+  background-position: 0 50%;
+  animation: bannerScroll 20s linear infinite;
+  opacity: 0.9;
+  z-index: 1000;
+  filter: drop-shadow(0 2px 8px rgba(92,0,35,0.2));
+}
+
+@keyframes bannerScroll {
+  from { background-position-x: 0; }
+  to { background-position-x: -1000px; }
+}
+
+@media (max-width: 768px) {
+  .scroll-banner {
+    top: 58%;
+    height: clamp(24px, 7vw, 36px);
+    animation-duration: 16s;
+  }
+}
+
+.hackathon-text {
+  font-family: 'Magz', serif;
+  color: #5C0023;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.festival-text {
+  font-family: 'Owned', serif;
+  color: #5C0023;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.1em;
+}
+
+.make-a-ton-animated {
+  display: inline-block;
+  animation: fontCycle 4s ease-in-out infinite;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: #5C0023;
+}
+
+@keyframes fontCycle {
+  0% { 
+    font-family: 'Magz', serif;
+    color: #5C0023;
+  }
+  16.67% { 
+    font-family: 'Owned', serif;
+    color: #5C0023;
+  }
+  33.33% { 
+    font-family: 'YesevaOne', serif;
+    color: #5C0023;
+  }
+  50% { 
+    font-family: 'Canicule Display', serif;
+    color: #5C0023;
+  }
+  66.67% { 
+    font-family: 'Swistblnk Moalang Melintang', serif;
+    color: #5C0023;
+  }
+  83.33% { 
+    font-family: 'PlaylistScript', cursive;
+    color: #5C0023;
+  }
+  100% { 
+    font-family: 'Magz', serif;
+    color: #5C0023;
+  }
 }
 
 .hackathon-word {
