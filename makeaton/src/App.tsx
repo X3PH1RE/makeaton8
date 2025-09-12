@@ -1,111 +1,162 @@
 import './App.css'
-import webviewImage from '../assets/webview.png'
+import { useEffect, useRef } from 'react'
+import webviewImage from '../assets/webview prerelease.png'
 import kathakaliImage from '../assets/kathakali.png'
 import circleTextImage from '../assets/circle-text.png'
-import sponsor1 from '../assets/treasue 1.png'
-import sponsor2 from '../assets/treasure 2.png'
-import sponsor3 from '../assets/treasure 3.png'
-import MagicBento from './MagicBento'
-import { useState } from 'react'
+import matLogo from '../assets/MAT new logo.png'
 
 function App() {
-  const [activeFaq, setActiveFaq] = useState<number | null>(null);
+  const cursorRef = useRef<HTMLDivElement>(null)
+  const trailsRef = useRef<HTMLDivElement[]>([])
 
-  const toggleFaq = (index: number) => {
-    setActiveFaq(activeFaq === index ? null : index);
-  };
+  useEffect(() => {
+    const cursor = cursorRef.current
+    if (!cursor) return
 
-  const faqData = [
-    {
-      question: "What is Make A Ton?",
-      answer: "Make A Ton is South India's biggest hackathon, bringing together developers, designers, and innovators to create amazing solutions in just 24 hours."
-    },
-    {
-      question: "Who can participate?",
-      answer: "Students from any college or university can participate. Teams can have 2-4 members. Both beginners and experienced developers are welcome!"
-    },
-    {
-      question: "What are the prizes?",
-      answer: "Total prize pool worth ₹10+ Lakhs! Cash prizes, gadgets, internships, and amazing opportunities await the winners."
-    },
-    {
-      question: "How do I register?",
-      answer: "Registration opens soon! Follow our social media for updates. You can register as a team or individually and we'll help you find teammates."
-    },
-    {
-      question: "What should I bring?",
-      answer: "Your laptop, charger, and enthusiasm! We'll provide food, drinks, and a great workspace. Don't forget your ID cards."
-    },
-    {
-      question: "Is it free to participate?",
-      answer: "Yes! Make A Ton is completely free to participate. We cover all costs including food, workspace, and amazing prizes."
+    // Create trail elements
+    const trails: HTMLDivElement[] = []
+    for (let i = 0; i < 8; i++) {
+      const trail = document.createElement('div')
+      trail.className = 'cursor-trail'
+      document.body.appendChild(trail)
+      trails.push(trail)
     }
-  ];
+    trailsRef.current = trails
+
+    const positions = Array(trails.length).fill(0).map(() => ({ x: 0, y: 0 }))
+    let mouseX = 0
+    let mouseY = 0
+
+    const handleMouseMove = (e: MouseEvent) => {
+      const { clientX, clientY } = e
+      mouseX = clientX
+      mouseY = clientY
+      
+      // Update cursor position
+      cursor.style.left = `${clientX}px`
+      cursor.style.top = `${clientY}px`
+
+      // Update trail positions with delay
+      positions.unshift({ x: clientX, y: clientY })
+      positions.pop()
+
+      trails.forEach((trail, index) => {
+        const pos = positions[index * 2] // Spread trails more
+        if (pos) {
+          trail.style.left = `${pos.x}px`
+          trail.style.top = `${pos.y}px`
+          trail.style.opacity = `${Math.max(0.1, 0.8 - (index * 0.1))}`
+          trail.style.transform = `translate(-50%, -50%) scale(${1 - (index * 0.1)})`
+        }
+      })
+
+      // Create particle effects more frequently
+      if (Math.random() < 0.15) {
+        createSparkleParticle(clientX, clientY)
+      }
+      
+      if (Math.random() < 0.08) {
+        createBrushParticle(clientX, clientY)
+      }
+    }
+
+    const createSparkleParticle = (x: number, y: number) => {
+      const particle = document.createElement('div')
+      particle.className = 'cursor-particle particle-sparkle'
+      particle.style.left = `${x + (Math.random() - 0.5) * 30}px`
+      particle.style.top = `${y + (Math.random() - 0.5) * 30}px`
+      document.body.appendChild(particle)
+
+      setTimeout(() => {
+        if (document.body.contains(particle)) {
+          document.body.removeChild(particle)
+        }
+      }, 2000)
+    }
+
+    const createBrushParticle = (x: number, y: number) => {
+      const particle = document.createElement('div')
+      particle.className = 'cursor-particle particle-brush'
+      particle.style.left = `${x + (Math.random() - 0.5) * 40}px`
+      particle.style.top = `${y + (Math.random() - 0.5) * 40}px`
+      particle.style.transform = `translate(-50%, -50%) rotate(${Math.random() * 360}deg)`
+      document.body.appendChild(particle)
+
+      setTimeout(() => {
+        if (document.body.contains(particle)) {
+          document.body.removeChild(particle)
+        }
+      }, 1500)
+    }
+
+    const handleMouseEnter = () => {
+      cursor.classList.add('cursor-hover')
+    }
+
+    const handleMouseLeave = () => {
+      cursor.classList.remove('cursor-hover')
+    }
+
+    const handleClick = () => {
+      cursor.classList.add('cursor-click')
+      
+      // Create burst of particles on click
+      for (let i = 0; i < 6; i++) {
+        setTimeout(() => {
+          createSparkleParticle(mouseX, mouseY)
+        }, i * 50)
+      }
+
+      setTimeout(() => {
+        cursor.classList.remove('cursor-click')
+      }, 400)
+    }
+
+    // Add event listeners
+    document.addEventListener('mousemove', handleMouseMove)
+    document.addEventListener('click', handleClick)
+    
+    // Add hover effects to interactive elements
+    const interactiveElements = document.querySelectorAll('p, .kathakali-image, .circle-text, .social-link')
+    interactiveElements.forEach(el => {
+      el.addEventListener('mouseenter', handleMouseEnter)
+      el.addEventListener('mouseleave', handleMouseLeave)
+    })
+
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove)
+      document.removeEventListener('click', handleClick)
+      trails.forEach(trail => {
+        if (document.body.contains(trail)) {
+          document.body.removeChild(trail)
+        }
+      })
+      interactiveElements.forEach(el => {
+        el.removeEventListener('mouseenter', handleMouseEnter)
+        el.removeEventListener('mouseleave', handleMouseLeave)
+      })
+    }
+  }, [])
 
   return (
     <div className="app-container">
+      <div ref={cursorRef} className="cursor"></div>
       <img 
         src={webviewImage} 
         alt="Background" 
         className="background-image"
       />
-      <h1 className="make-a-ton-text">
-        Make<br />
-        A<br />
-        Ton <span className="version-text">8.0</span>
-      </h1>
+      <img 
+        src={matLogo} 
+        alt="MAT Logo" 
+        className="mat-logo"
+      />
       <p className="hackathon-subtitle">
         South India's Biggest{' '}
         <span className="hackathon-word">
           Hackathon
         </span>
       </p>
-            <div className="prizes-text">Prizes</div>
-      <div className="activities-section">
-        <h2 className="activities-heading">Activities and Events</h2>
-        <MagicBento 
-          textAutoHide={true}
-          enableStars={true}
-          enableSpotlight={true}
-          enableBorderGlow={true}
-          enableTilt={true}
-          enableMagnetism={true}
-          clickEffect={true}
-          spotlightRadius={300}
-          particleCount={12}
-          glowColor="92, 0, 35"
-        />
-      </div>
-      <div className="previos-sponsors">
-        <h2 className="previos-sponsors-heading">Previous Sponsors</h2>
-        <div className="previos-sponsors-logos">
-          <img src={sponsor1} alt="Sponsor 1" />
-          <img src={sponsor2} alt="Sponsor 2" />
-          <img src={sponsor3} alt="Sponsor 3" />
-        </div>
-      </div>
-      
-      <div className="faq-section">
-        <h2 className="faq-heading">FAQs</h2>
-        <div className="faq-container">
-          {faqData.map((faq, index) => (
-            <div 
-              key={index}
-              className={`faq-item ${activeFaq === index ? 'active' : ''}`}
-              onClick={() => toggleFaq(index)}
-            >
-              <div className="faq-question">
-                <h3>{faq.question}</h3>
-                <span className="faq-toggle">{activeFaq === index ? '−' : '+'}</span>
-              </div>
-              <div className="faq-answer">
-                <p>{faq.answer}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      
       <img 
         src={circleTextImage} 
         alt="Circle Text" 
