@@ -197,6 +197,44 @@ function App() {
           Check out our Brochure
         </a>
       </div>
+      
+      {/* Knock Knock text */}
+      <p className="knock-knock-text">
+        Knock Knock, It is Us!
+      </p>
+      
+      {/* Contact section for Austin Benny */}
+      <div className="contact-section">
+        <div className="contact-card">
+          <div className="contact-sparkle">✨</div>
+          <div className="contact-header">
+            <h3 className="contact-title">Hey There, Future Hacker! 👋</h3>
+            <p className="contact-subtitle">Got any doubts?</p>
+          </div>
+          
+          <div className="contact-details">
+            <div className="contact-item">
+              <span className="contact-icon">📞</span>
+              <div className="contact-info">
+                <span className="contact-label">Ring-a-ding-ding! </span>
+                <a href="tel:+918848008766" className="contact-link">
+                  +91 8848008766
+                </a>
+              </div>
+            </div>
+            
+            <div className="contact-item">
+              <span className="contact-icon">📧</span>
+              <div className="contact-info">
+                <span className="contact-label">Drop us a line!  </span>
+                <a href="mailto:organizer@makeaton.in" className="contact-link">
+                    organizer@makeaton.in
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <img 
         src={circleTextImage} 
         alt="Circle Text" 
