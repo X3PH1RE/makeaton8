@@ -186,7 +186,7 @@ function App() {
       {/* Brochure download button */}
       <div className="brochure-section">
         <a 
-          href="makeaton\assets\Make-A-Ton 8.0 Brochure.pdf"
+          href="/Make-A-Ton 8.0 Brochure.pdf"
           download="Make-A-Ton 8.0 Brochure.pdf"
           className="brochure-button"
           aria-label="Download Make-A-Ton 8.0 Brochure"
