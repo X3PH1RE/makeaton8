@@ -302,11 +302,138 @@
   to { background-position-x: -1000px; }
 }
 
+/* Intersecting sponsor banners with different rotations */
+.sponsor-banner {
+  position: absolute;
+  left: 50%;
+  top: 77%;
+  width: 100vw;
+  height: clamp(32px, 6vw, 48px);
+  background-image: url('../assets/Wanna Sponsor US_ Wanna Sponsor Us_ Wanna Sponsor US_ Wanna Sponsor Us_.png');
+  background-size: auto 100%;
+  background-repeat: repeat-x;
+  background-position: 0 50%;
+  animation: sponsorScroll 18s linear infinite;
+  opacity: 0.95;
+  z-index: 1000;
+  filter: drop-shadow(0 3px 10px rgba(0,0,0,0.3));
+  transform-origin: center center;
+}
+
+.sponsor-banner-1 {
+  transform: translate(-50%, -50%) rotate(5deg);
+  z-index: 1001;
+  animation: sponsorScroll 18s linear infinite;
+}
+
+.sponsor-banner-2 {
+  transform: translate(-50%, -50%) rotate(-5deg);
+  z-index: 1000;
+  animation: sponsorScrollReverse 18s linear infinite;
+}
+
+@keyframes sponsorScroll {
+  from { background-position-x: 0; }
+  to { background-position-x: -1000px; }
+}
+
+@keyframes sponsorScrollReverse {
+  from { background-position-x: -1000px; }
+  to { background-position-x: 0; }
+}
+
+/* Brochure download button */
+.brochure-section {
+  position: absolute;
+  left: 50%;
+  top: 79%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  text-align: center;
+}
+
+.brochure-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #F5F5DC 0%, #E6E6D3 100%);
+  color: #5C0023;
+  text-decoration: none;
+  border-radius: 50px;
+  font-family: 'Racama', serif;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 8px 25px rgba(245, 245, 220, 0.4);
+  border: 2px solid rgba(92, 0, 35, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.brochure-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(92, 0, 35, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.brochure-button:hover::before {
+  left: 100%;
+}
+
+.brochure-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(245, 245, 220, 0.6);
+  border-color: rgba(92, 0, 35, 0.4);
+  background: linear-gradient(135deg, #F0F0E6 0%, #E0E0D0 100%);
+}
+
+.brochure-button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(245, 245, 220, 0.5);
+}
+
+.download-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #5C0023;
+  transition: transform 0.3s ease;
+}
+
+.brochure-button:hover .download-icon {
+  transform: translateY(-2px);
+}
+
 @media (max-width: 768px) {
   .scroll-banner {
     top: 58%;
     height: clamp(24px, 7vw, 36px);
     animation-duration: 16s;
+  }
+  
+  .sponsor-banner-1 {
+    height: clamp(28px, 8vw, 42px);
+    animation-duration: 15s;
+  }
+  
+  .sponsor-banner-2 {
+    height: clamp(28px, 8vw, 42px);
+    animation-duration: 15s;
+  }
+  
+  .brochure-section {
+    top: 90%;
+  }
+  
+  .brochure-button {
+    padding: 0.8rem 1.5rem;
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
   }
 }
 
