@@ -206,7 +206,6 @@ function App() {
       {/* Contact section for Austin Benny */}
       <div className="contact-section">
         <div className="contact-card">
-          <div className="contact-sparkle">✨</div>
           <div className="contact-header">
             <h3 className="contact-title">Hey There, Future Hacker! 👋</h3>
             <p className="contact-subtitle">Got any doubts?</p>
