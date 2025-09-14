@@ -9,27 +9,6 @@ function App() {
   const cursorRef = useRef<HTMLDivElement>(null)
   const trailsRef = useRef<HTMLDivElement[]>([])
 
-  // Toggle contact details function
-  const toggleContact = (type: 'phone' | 'email') => {
-    const phoneDetail = document.getElementById('phone-detail');
-    const emailDetail = document.getElementById('email-detail');
-    
-    if (phoneDetail && emailDetail) {
-      // Hide all details first
-      phoneDetail.style.display = 'none';
-      emailDetail.style.display = 'none';
-      
-      // Show the selected type with animation
-      if (type === 'phone') {
-        phoneDetail.style.display = 'block';
-        phoneDetail.style.animation = 'fadeInUp 0.5s ease-out';
-      } else {
-        emailDetail.style.display = 'block';
-        emailDetail.style.animation = 'fadeInUp 0.5s ease-out';
-      }
-    }
-  };
-
   useEffect(() => {
     const cursor = cursorRef.current
     if (!cursor) return
@@ -232,22 +211,26 @@ function App() {
             <p className="contact-subtitle">Got any doubts?</p>
           </div>
           
-          <div className="contact-buttons">
-            <a href="tel:+918848008766" className="contact-button phone-button" onClick={() => toggleContact('phone')}>
+          <div className="contact-details">
+            <div className="contact-item">
               <span className="contact-icon">📞</span>
-              <div className="contact-button-content">
-                <span className="contact-button-text">Ring-a-ding-ding!</span>
-                <span className="contact-detail" id="phone-detail">+91 8848008766</span>
+              <div className="contact-info">
+                <span className="contact-label">Ring-a-ding-ding! </span>
+                <a href="tel:+918848008766" className="contact-link">
+                  +91 8848008766
+                </a>
               </div>
-            </a>
+            </div>
             
-            <a href="mailto:organizer@makeaton.in" className="contact-button email-button" onClick={() => toggleContact('email')}>
+            <div className="contact-item">
               <span className="contact-icon">📧</span>
-              <div className="contact-button-content">
-                <span className="contact-button-text">Drop us a mail!</span>
-                <span className="contact-detail" id="email-detail">organizer@makeaton.in</span>
+              <div className="contact-info">
+                <span className="contact-label">Drop us a mail!  </span>
+                <a href="mailto:organizer@makeaton.in" className="contact-link">
+                    organizer@makeaton.in
+                </a>
               </div>
-            </a>
+            </div>
           </div>
         </div>
       </div>
