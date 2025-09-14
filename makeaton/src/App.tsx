@@ -207,7 +207,7 @@ function App() {
       <div className="contact-section">
         <div className="contact-card">
           <div className="contact-header">
-            <h3 className="contact-title">Hey There, Future Hacker! 👋</h3>
+            <h3 className="contact-title">Hey there, Future Hacker! 👋</h3>
             <p className="contact-subtitle">Got any doubts?</p>
           </div>
           
@@ -312,6 +312,59 @@ function App() {
               <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75S24 8.83 24 12z" fill="currentColor"/>
             </svg>
           </a>
+        </div>
+      </div>
+
+      {/* Previous Sponsors Section */}
+      <h2 className="sponsors-heading">Previous Sponsors</h2>
+      <div className="previous-sponsors-section">
+        <div className="sponsors-grid">
+          <div className="sponsor-item">
+            <img src="/assets/sponsors/Eduport.png" alt="Eduport" className="sponsor-logo" />
+          </div>
+          <div className="sponsor-item">
+            <img src="/assets/sponsors/clusterdev.png" alt="ClusterDev" className="sponsor-logo" />
+          </div>
+          <div className="sponsor-item">
+            <img src="/assets/sponsors/aws.png" alt="AWS" className="sponsor-logo" />
+          </div>
+          <div className="sponsor-item">
+            <img src="/assets/sponsors/orkes.png" alt="Orkes" className="sponsor-logo" />
+          </div>
+          <div className="sponsor-item">
+            <img src="/assets/sponsors/agrivator.png" alt="Agrivator" className="sponsor-logo" />
+          </div>
+          <div className="sponsor-item">
+            <img src="/assets/sponsors/mlh.png" alt="MLH" className="sponsor-logo" />
+          </div>
+          <div className="sponsor-item">
+            <img src="/assets/sponsors/balsamiq.png" alt="Balsamiq" className="sponsor-logo" />
+          </div>
+          <div className="sponsor-item">
+            <img src="/assets/sponsors/logitech.png" alt="Logitech" className="sponsor-logo" />
+          </div>
+          <div className="sponsor-item">
+            <img src="/assets/sponsors/cusat_tech.png" alt="CUSAT Tech" className="sponsor-logo" />
+          </div>
+          <div className="sponsor-item">
+            <img src="/assets/sponsors/github.png" alt="GitHub" className="sponsor-logo" />
+          </div>
+          <div className="sponsor-item">
+            <img src="/assets/sponsors/INQ.png" alt="Inq" className="sponsor-logo" />
+          </div>
+          <div className="sponsor-item">
+            <img src="/assets/sponsors/Fulva-transparent.png" alt="Fulva" className="sponsor-logo" />
+          </div>
+          <div className="sponsor-item">
+            <img src="/assets/sponsors/GeeksForGeeks.png" alt="GeeksForGeeks" className="sponsor-logo" />
+          </div>
+          
+          <div className="sponsor-item">
+            <img src="/assets/sponsors/Redbull.png" alt="Red Bull" className="sponsor-logo" />
+          </div>
+          <div className="sponsor-item">
+            <img src="/assets/sponsors/xena.png" alt="Xena" className="sponsor-logo" />
+          </div>
         </div>
       </div>
     </div>
