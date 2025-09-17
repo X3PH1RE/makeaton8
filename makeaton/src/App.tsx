@@ -1,6 +1,7 @@
 import './App.css'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import webviewImage from '../assets/webview prerelease.png'
+import mobileBgImage from '../assets/mobile prerelease.png'
 import kathakaliImage from '../assets/kathakali.png'
 import circleTextImage from '../assets/circle-text.png'
 import matLogo from '../assets/MAT new logo.png'
@@ -8,6 +9,20 @@ import matLogo from '../assets/MAT new logo.png'
 function App() {
   const cursorRef = useRef<HTMLDivElement>(null)
   const trailsRef = useRef<HTMLDivElement[]>([])
+  const [useMobileBg, setUseMobileBg] = useState(false)
+
+  // Detect mobile/portrait or narrow aspect ratio to decide bg rendering
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 700px), (orientation: portrait), (max-aspect-ratio: 2/3)')
+    const update = () => setUseMobileBg(mq.matches)
+    update()
+    mq.addEventListener?.('change', update)
+    window.addEventListener('resize', update)
+    return () => {
+      mq.removeEventListener?.('change', update)
+      window.removeEventListener('resize', update)
+    }
+  }, [])
 
   useEffect(() => {
     const cursor = cursorRef.current
@@ -141,11 +156,20 @@ function App() {
   return (
     <div className="app-container">
       <div ref={cursorRef} className="cursor"></div>
-      <img 
-        src={webviewImage} 
-        alt="Background" 
-        className="background-image"
-      />
+      {!useMobileBg && (
+        <img 
+          src={webviewImage} 
+          alt="Background" 
+          className="background-image"
+        />
+      )}
+      {useMobileBg && (
+        <img
+          src={mobileBgImage}
+          alt="Background"
+          className="mobile-background-image"
+        />
+      )}
       <img 
         src={matLogo} 
         alt="MAT Logo" 

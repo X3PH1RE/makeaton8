@@ -125,6 +125,90 @@
   overflow-x: hidden;
 }
 
+/* Mobile/portrait: use dedicated background image and hide the desktop bg <img> */
+@media (max-width: 700px) {
+  .app-container {
+    /* Switch to inline mobile image to avoid layered scrolling */
+    background-image: none;
+    min-height: auto;
+  }
+
+  .background-image { display: none; }
+  .mobile-background-image { display: block; width: 100%; height: auto; }
+
+  /* Compact logo and headings for mobile composition */
+  .mat-logo {
+    left: 5%;
+    top: 2%;
+    width: clamp(140px, 45vw, 220px);
+  }
+
+  .hackathon-subtitle {
+    left: 5%;
+    top: 11%;
+    font-size: clamp(5rem, 6vw, 5rem);
+  }
+
+  .festival-quote {
+    left: 4%;
+    top: 22%;
+    font-size: clamp(1.1rem, 5vw, 1.8rem);
+    max-width: 92%;
+  }
+
+  .about-text {
+    left: 6%;
+    top: 45%;
+    max-width: 88%;
+  }
+
+  /* Place key decorative assets to the right of the logo */
+  .circle-text {
+    display: block;
+    right: 4%;
+    top: 12%;
+    width: clamp(90px, 28vw, 160px);
+    scale: 1;
+    animation-duration: 35s;
+  }
+
+  .kathakali-image {
+    display: block;
+    right: 2.5%;
+    top: 15%;
+    width: clamp(85px, 26vw, 150px);
+    scale: 1;
+  }
+
+  /* Shadow behind Kathakali on mobile */
+  .kathakali-shadow {
+    display: block;
+    right: 3.2%;
+    top: 18.5%;
+    width: clamp(85px, 26vw, 150px);
+    scale: 3;
+    opacity: 0.18;
+    filter: blur(1.2px) brightness(0.9);
+    z-index: 999; /* stays below .kathakali-image (1000) */
+  }
+}
+
+/* Also switch when the viewport is tall/narrow regardless of width */
+@media (max-aspect-ratio: 2/3), (orientation: portrait) {
+  .app-container {
+    background-image: none;
+    min-height: auto;
+  }
+
+  .background-image { display: none; }
+  .mobile-background-image { display: block; width: 100%; height: auto; }
+
+  .circle-text { display: block; right: 4%; top: 16.5%; width: clamp(90px, 28vw, 160px); scale: 3.5; }
+  .kathakali-image { display: block; right: 2.5%; top: 17%; width: clamp(85px, 26vw, 150px); scale: 3; }
+  .kathakali-shadow { display: block; right: 3.2%; top: 18.5%; width: clamp(85px, 26vw, 150px); scale: 3; opacity: 0.18; filter: blur(1.2px) brightness(0.9); z-index: 999; }
+  .about-text { left: 6%; top: 45%; max-width: 88%; }
+}
+
 .background-image {
   width: 100%;
   height: auto;
@@ -1340,3 +1424,147 @@ html {
 }
 
 
+/* Ensure mobile overrides take precedence over base decorative positions */
+@media (max-width: 700px), (max-aspect-ratio: 2/3), (orientation: portrait) {
+  .hackathon-subtitle {
+    font-size: clamp(1.6rem, 7vw, 8rem) !important;
+  }
+  
+  .festival-quote {
+    left: 4% !important;
+    top: 46% !important;
+    font-size: clamp(1.1rem, 5vw, 1.8rem) !important;
+    max-width: 92% !important;
+  }
+  
+  .about-text {
+    left: 6% !important;
+    top: 49% !important;
+    max-width: 88% !important;
+    font-size: clamp(0.6rem, 2vw, 1.2rem) !important;
+  }
+  
+  .circle-text {
+    right: 4% !important;
+    top: 19.55% !important;
+    width: clamp(90px, 28vw, 160px) !important;
+    scale: 3.6 !important;
+    display: block !important;
+  }
+
+  .kathakali-image {
+    right: 2.5% !important;
+    top: 20% !important;
+    width: clamp(85px, 26vw, 150px) !important;
+    scale: 3 !important;
+    display: block !important;
+  }
+
+  .kathakali-shadow {
+    display: block !important;
+    right: 3.2% !important;
+    top: 19.6% !important;
+    width: clamp(85px, 26vw, 150px) !important;
+    scale: 3.3 !important;
+    opacity: 0.18 !important;
+    z-index: 999 !important;
+  }
+  
+  .sponsors-heading {
+    font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
+    top: 72% !important;
+    left: 40% !important;
+    transform: translateX(-26%) !important;
+    text-align: center !important;
+    position: absolute !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  .previous-sponsors-section {
+    top: 74% !important;
+    left: 50% !important;
+    transform: translateX(-50%) scale(0.9) !important;
+    transform-origin: top center !important;
+    width: clamp(260px, 85%, 900px) !important;
+    padding: clamp(0.6rem, 2vw, 1.2rem) !important;
+    position: absolute !important;
+    text-align: center !important;
+    margin: 0 !important;
+  }
+  
+  .sponsors-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: clamp(0.08rem, 1.2vw, 0.6rem) !important;
+  }
+  
+  .sponsor-item {
+    height: clamp(10px, 8vw, 44px) !important;
+  }
+  
+  .sponsor-logo {
+    max-width: clamp(65%, 5.5vw, 80%) !important;
+    max-height: clamp(65%, 5.5vw, 80%) !important;
+  }
+  
+  .brochure-section {
+    top: 88.3% !important;
+    transform: translateX(-50%) scale(0.6) !important;
+    }
+  
+  .brochure-button {
+    padding: 0.5rem 1rem !important;
+    font-size: clamp(0.2rem, 2vw, 1rem) !important;
+  }
+  
+  .knock-knock-text {
+    top: 92% !important;
+    font-size: clamp(1rem, 4vw, 1.6rem) !important;
+  }
+  
+  .contact-section {
+    top: 90% !important;
+    width: clamp(60px, 75%, 600px) !important;
+    transform: translateX(-50%) scale(0.6) !important;
+
+  }
+  
+  .contact-card {
+    padding: clamp(0.15rem, 1.5vw, 1.5rem) !important;
+  }
+  
+  .social-media-section {
+    top: 98.5% !important;
+    bottom: clamp(1.5rem, 4vw, 3rem) !important;
+    transform: translateX(-50%) scale(0.7) !important;
+
+  }
+
+  /* Mobile overrides for "Wanna Sponsor US" intersecting banners */
+  .sponsor-banner {
+    left: 50% !important;
+    top: 82% !important;
+    width: 100vw !important;
+    height: clamp(20px, 6vw, 36px) !important;
+  }
+
+  .sponsor-banner-1 {
+    top: 88% !important;
+    height: clamp(20px, 6vw, 36px) !important;
+    
+  }
+
+  .sponsor-banner-2 {
+    top: 88% !important;
+    height: clamp(20px, 6vw, 36px) !important;
+  }
+}
+
+/* Mobile override for Tracks & Prizes scrolling banner */
+@media (max-width: 700px), (max-aspect-ratio: 2/3), (orientation: portrait) {
+  .scroll-banner {
+    top: 68% !important;
+    height: clamp(16px, 5vw, 28px) !important;
+    animation-duration: 16s !important;
+  }
+}
