@@ -1441,7 +1441,7 @@ html {
     left: 6% !important;
     top: 49% !important;
     max-width: 88% !important;
-    font-size: clamp(0.6rem, 2vw, 1.2rem) !important;
+    font-size: clamp(0.6rem, 2.7vw, 4rem) !important;
   }
   
   .circle-text {
@@ -1487,7 +1487,7 @@ html {
     transform: translateX(-50%) scale(0.9) !important;
     transform-origin: top center !important;
     width: clamp(260px, 85%, 900px) !important;
-    padding: clamp(0.6rem, 2vw, 1.2rem) !important;
+    padding: clamp(0.6rem, 3vw, 1.2rem) !important;
     position: absolute !important;
     text-align: center !important;
     margin: 0 !important;
@@ -1566,5 +1566,13 @@ html {
     top: 68% !important;
     height: clamp(16px, 5vw, 28px) !important;
     animation-duration: 16s !important;
+  }
+
+  /* MAT logo override */
+  .mat-logo {
+    left: 6% !important;
+    top: 1.5% !important;
+    width: clamp(100px, 50vw, 400px) !important;
+    height: auto !important;
   }
 }
