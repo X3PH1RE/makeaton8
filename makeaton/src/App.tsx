@@ -222,10 +222,10 @@ function App() {
         </a>
       </div>
       
-      {/* Knock Knock text */}
-      <p className="knock-knock-text">
-        Knock Knock, It is Us!
-      </p>
+             {/* Knock Knock text */}
+             <p className="knock-knock-text">
+               Knock Knock, It is Us!
+             </p>
       
       {/* Contact section for Austin Benny */}
       <div className="contact-section">

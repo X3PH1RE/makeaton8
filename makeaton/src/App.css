@@ -1518,12 +1518,32 @@ html {
   }
   
   .knock-knock-text {
-    top: 92% !important;
-    font-size: clamp(1rem, 4vw, 1.6rem) !important;
+    top: 94.3% !important;
+    left: -3% !important;
+    transform: translateY(-50%) rotate(-90deg) !important;
+    transform-origin: center !important;
+    font-size: clamp(1rem, 6vw, 8rem) !important;
+    writing-mode: horizontal-tb !important;
+    white-space: normal !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+  }
+  
+  .knock-knock-text::before {
+    content: "Knock Knock\A It is Us!" !important;
+    white-space: pre !important;
+  }
+  
+  .knock-knock-text {
+    font-size: 0 !important;
+  }
+  
+  .knock-knock-text::before {
+    font-size: clamp(1rem, 6vw, 8rem) !important;
   }
   
   .contact-section {
-    top: 90% !important;
+    top: 89.2% !important;
     width: clamp(60px, 75%, 600px) !important;
     transform: translateX(-50%) scale(0.6) !important;
 
