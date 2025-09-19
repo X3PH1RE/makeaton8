@@ -392,7 +392,7 @@ function App() {
           </a>
           
           <a 
-            href="https://wa.me/919876543210" 
+            href="https://whatsapp.com/channel/0029ValGCQM60eBjNF5wS10C" 
             target="_blank" 
             rel="noopener noreferrer"
             className="social-link"
@@ -404,7 +404,7 @@ function App() {
           </a>
           
           <a 
-            href="https://t.me/makeaton" 
+            href="https://t.me/makeaton7" 
             target="_blank" 
             rel="noopener noreferrer"
             className="social-link"
