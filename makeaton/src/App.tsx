@@ -153,6 +153,36 @@ function App() {
     }
   }, [])
 
+  // Prevent only background image copying and downloading
+  useEffect(() => {
+    // Prevent right-click context menu only on kathakali images
+    const handleContextMenu = (e: MouseEvent) => {
+      const target = e.target as HTMLElement
+      if (target.classList.contains('kathakali-image') || target.classList.contains('kathakali-shadow')) {
+        e.preventDefault()
+        return false
+      }
+    }
+    
+    // Prevent drag and drop only on kathakali images
+    const handleDragStart = (e: DragEvent) => {
+      const target = e.target as HTMLElement
+      if (target.classList.contains('kathakali-image') || target.classList.contains('kathakali-shadow')) {
+        e.preventDefault()
+        return false
+      }
+    }
+    
+    // Add event listeners
+    document.addEventListener('contextmenu', handleContextMenu)
+    document.addEventListener('dragstart', handleDragStart)
+    
+    return () => {
+      document.removeEventListener('contextmenu', handleContextMenu)
+      document.removeEventListener('dragstart', handleDragStart)
+    }
+  }, [])
+
   return (
     <div className="app-container">
       <div ref={cursorRef} className="cursor"></div>
@@ -182,7 +212,7 @@ function App() {
         </span>
       </p>
       <p className="festival-quote">
-        If a <span className="hackathon-text">Hackathon</span> could be a <span className="festival-text">FESTIVAL</span>,<br />
+        If a hackathon<span className="hackathon-text"></span> could be a <span className="festival-text">Festival</span>,<br />
         it'd be <span className="make-a-ton-animated">Make-A-Ton</span>.
       </p>
       <div className="about-text">

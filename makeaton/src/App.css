@@ -1,3 +1,20 @@
+/* Prevent only background image copying and downloading */
+.kathakali-image,
+.kathakali-shadow {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+  -ms-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  pointer-events: none;
+}
+
 @font-face {
   font-family: 'Swistblnk Moalang Melintang';
   src: url('./assets/fonts/Swistblnk Moalang Melintang.ttf') format('truetype');
@@ -411,6 +428,11 @@
 @keyframes bannerScroll {
   from { background-position-x: 0; }
   to { background-position-x: -1000px; }
+}
+
+@keyframes textScroll {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
 }
 
 /* Intersecting sponsor banners with different rotations */
@@ -891,11 +913,13 @@
 }
 
 .festival-text {
-  font-family: 'Owned', serif;
+  font-family: 'PlaylistScript', cursive;
   color: #5C0023;
-  font-weight: bold;
+  font-weight: 400;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
+  font-size: 1.2em;
+  transform: rotate(-1deg);
 }
 
 .make-a-ton-animated {
@@ -1018,6 +1042,15 @@
   pointer-events: none;
   user-select: none;
   -webkit-user-drag: none;
+  -moz-user-drag: none;
+  -ms-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
   -moz-user-select: none;
   -ms-user-select: none;
   draggable: false;
@@ -1728,4 +1761,28 @@ html {
     width: clamp(100px, 50vw, 400px) !important;
     height: auto !important;
   }
+}
+
+/* Text version of scroll banner */
+.scroll-banner-text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 47%;
+  height: clamp(28px, 5vw, 50px);
+  overflow: hidden;
+  white-space: nowrap;
+  animation: bannerScroll 20s linear infinite;
+  opacity: 0.9;
+}
+
+.banner-text {
+  display: inline-block;
+  font-family: 'Canicule', serif;
+  font-size: clamp(1.2rem, 3vw, 2.2rem);
+  font-weight: 600;
+  color: #5C0023;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  padding-right: 2em;
+  animation: textScroll 20s linear infinite;
 }
