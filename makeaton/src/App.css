@@ -1521,6 +1521,26 @@ html {
   background: linear-gradient(135deg, rgba(232, 219, 204, 0.9) 0%, rgba(245, 245, 220, 0.8) 100%);
 }
 
+/* Previous Edition Link */
+.previous-edition-link {
+  font-family: 'Racama', serif;
+  font-size: clamp(0.85rem, 1.8vw, 1.5rem);
+  color: #5C0023;
+  text-decoration: none;
+  opacity: 0.8;
+  text-align: center;
+  margin-top: clamp(0.3rem, 1.2vw, 0.5rem);
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.previous-edition-link:hover {
+  opacity: 1;
+  color: #5C0023;
+  text-decoration: underline;
+  transform: translateY(-1px);
+}
+
 /* Mobile responsiveness for wanna connect text and buttons */
 @media (max-width: 768px) {
   .wanna-connect-text.desktop-only {

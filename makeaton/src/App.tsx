@@ -341,6 +341,9 @@ function App() {
         <a href="mailto:organizer@makeaton.in" className="contact-button email-button">
           📧 Email Us
         </a>
+        <a href="https://2024.makeaton.in" target="_blank" rel="noopener noreferrer" className="previous-edition-link">
+          Check out the previous edition!
+        </a>
       </div>
 
       {/* Contact Buttons - Mobile */}
@@ -351,6 +354,9 @@ function App() {
         </a>
         <a href="mailto:organizer@makeaton.in" className="contact-button email-button">
           📧 Email Us
+        </a>
+        <a href="https://2024.makeaton.in" target="_blank" rel="noopener noreferrer" className="previous-edition-link">
+          Check out previous edition!
         </a>
       </div>
 
