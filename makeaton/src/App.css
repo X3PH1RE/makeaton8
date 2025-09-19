@@ -13,6 +13,24 @@
   -webkit-touch-callout: none;
   -webkit-tap-highlight-color: transparent;
   pointer-events: none;
+  /* Additional mobile protection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Prevent image saving on mobile */
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  /* Disable long press context menu on mobile */
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  /* Prevent image from being treated as draggable */
+  draggable: false;
 }
 
 @font-face {
@@ -1407,7 +1425,7 @@ html {
 /* Wanna Connect Text - Mobile */
 .wanna-connect-text.mobile-only {
   position: absolute;
-  left: 50%;
+  left: 60%;
   top: 91.5%;
   transform: translateX(-50%);
   font-family: 'Canicule', serif;
@@ -1437,7 +1455,7 @@ html {
 /* Contact Buttons - Mobile */
 .contact-buttons.mobile-only {
   position: absolute;
-  left: 50%;
+  left: 60%;
   top: 93%;
   transform: translateX(-50%);
   display: none;

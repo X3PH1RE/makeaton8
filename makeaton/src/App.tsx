@@ -173,13 +173,46 @@ function App() {
       }
     }
     
+    // Prevent mobile long press context menu on kathakali images
+    const handleTouchStart = (e: TouchEvent) => {
+      const target = e.target as HTMLElement
+      if (target.classList.contains('kathakali-image') || target.classList.contains('kathakali-shadow')) {
+        e.preventDefault()
+        return false
+      }
+    }
+    
+    // Prevent mobile long press on kathakali images
+    const handleTouchEnd = (e: TouchEvent) => {
+      const target = e.target as HTMLElement
+      if (target.classList.contains('kathakali-image') || target.classList.contains('kathakali-shadow')) {
+        e.preventDefault()
+        return false
+      }
+    }
+    
+    // Prevent mobile context menu on kathakali images
+    const handleTouchMove = (e: TouchEvent) => {
+      const target = e.target as HTMLElement
+      if (target.classList.contains('kathakali-image') || target.classList.contains('kathakali-shadow')) {
+        e.preventDefault()
+        return false
+      }
+    }
+    
     // Add event listeners
     document.addEventListener('contextmenu', handleContextMenu)
     document.addEventListener('dragstart', handleDragStart)
+    document.addEventListener('touchstart', handleTouchStart, { passive: false })
+    document.addEventListener('touchend', handleTouchEnd, { passive: false })
+    document.addEventListener('touchmove', handleTouchMove, { passive: false })
     
     return () => {
       document.removeEventListener('contextmenu', handleContextMenu)
       document.removeEventListener('dragstart', handleDragStart)
+      document.removeEventListener('touchstart', handleTouchStart)
+      document.removeEventListener('touchend', handleTouchEnd)
+      document.removeEventListener('touchmove', handleTouchMove)
     }
   }, [])
 
@@ -330,11 +363,17 @@ function App() {
         src={kathakaliImage} 
         alt="Kathakali Shadow" 
         className="kathakali-shadow"
+        draggable="false"
+        onContextMenu={(e) => e.preventDefault()}
+        onDragStart={(e) => e.preventDefault()}
       />
       <img 
         src={kathakaliImage} 
         alt="Kathakali" 
         className="kathakali-image"
+        draggable="false"
+        onContextMenu={(e) => e.preventDefault()}
+        onDragStart={(e) => e.preventDefault()}
       />
       
       {/* Social Media Links */}
