@@ -1698,13 +1698,14 @@ html {
   }
   
   .brochure-section {
-    top: 88.3% !important;
+    top: 88.5% !important;
     transform: translateX(-50%) scale(0.6) !important;
     }
   
   .brochure-button {
     padding: 0.5rem 1rem !important;
-    font-size: clamp(0.2rem, 2vw, 1rem) !important;
+    font-size: clamp(0.8rem, 3.5vw, 1.2rem) !important;
+    white-space: nowrap !important;
   }
   
   .knock-knock-text {
