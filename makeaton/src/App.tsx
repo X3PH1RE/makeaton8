@@ -258,6 +258,39 @@ function App() {
           </div>
         </div>
       </div>
+
+      {/* Wanna Connect Text - Desktop */}
+      <p className="wanna-connect-text desktop-only">
+        wanna connect?
+      </p>
+
+      {/* Wanna Connect Text - Mobile */}
+      <p className="wanna-connect-text mobile-only">
+        wanna connect?
+      </p>
+
+      {/* Contact Buttons - Desktop */}
+      <div className="contact-buttons desktop-only">
+        <a href="tel:+918848008766" className="contact-button call-button">
+          📞 Call Us
+          <div className="button-subtext">Make sure to say "<em>Hey <strong>Austin!</strong></em>"</div>
+        </a>
+        <a href="mailto:organizer@makeaton.in" className="contact-button email-button">
+          📧 Email Us
+        </a>
+      </div>
+
+      {/* Contact Buttons - Mobile */}
+      <div className="contact-buttons mobile-only">
+        <a href="tel:+918848008766" className="contact-button call-button">
+          📞 Call Us
+          <div className="button-subtext">Make sure to say "<em>Hey <strong>Austin!</strong></em>"</div>
+        </a>
+        <a href="mailto:organizer@makeaton.in" className="contact-button email-button">
+          📧 Email Us
+        </a>
+      </div>
+
       <img 
         src={circleTextImage} 
         alt="Circle Text" 

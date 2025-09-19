@@ -551,6 +551,7 @@
   z-index: 1000;
   width: clamp(80px, 70%, 600px);
   max-width: 600px;
+  display: none;
 }
 
 .contact-card {
@@ -876,26 +877,11 @@
   }
   
   .contact-section {
-    top: 98%;
-    width: clamp(60px, 75%, 600px);
+    display: none;
   }
   
-  .contact-card {
-    padding: clamp(0.15rem, 1.5vw, 1.5rem);
-  }
-  
-  .contact-details {
-    gap: clamp(0.1rem, 1vw, 0.8rem);
-  }
-  
-  .contact-item {
-    padding: clamp(0.1rem, 1.2vw, 0.8rem);
-  }
-  
-  .contact-details {
-    gap: clamp(0.1rem, 1vw, 0.8rem);
-  }
 }
+
 
 .hackathon-text {
   font-family: 'Magz', serif;
@@ -1368,6 +1354,159 @@ html {
   transform: scale(1.1);
 }
 
+/* Wanna Connect Text - Desktop */
+.wanna-connect-text.desktop-only {
+  position: absolute;
+  left: 50%;
+  top: 87%;
+  transform: translateX(-50%);
+  font-family: 'Canicule', serif;
+  color: #5C0023;
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+  z-index: 1000;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+/* Wanna Connect Text - Mobile */
+.wanna-connect-text.mobile-only {
+  position: absolute;
+  left: 50%;
+  top: 91.5%;
+  transform: translateX(-50%);
+  font-family: 'Canicule', serif;
+  color: #5C0023;
+  font-size: clamp(1.2rem, 4vw, 2.5rem);
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+  z-index: 1000;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+
+/* Contact Buttons - Desktop */
+.contact-buttons.desktop-only {
+  position: absolute;
+  left: 50%;
+  top: 89%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.5rem, 2vw, 1rem);
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Contact Buttons - Mobile */
+.contact-buttons.mobile-only {
+  position: absolute;
+  left: 50%;
+  top: 93%;
+  transform: translateX(-50%);
+  display: none;
+  flex-direction: column;
+  gap: clamp(0.1rem, 1vw, 1.5rem);
+  align-items: center;
+  z-index: 1000;
+}
+
+.contact-buttons.mobile-only .contact-button {
+  width: clamp(120px, 40vw, 200px);
+  min-width: clamp(120px, 40vw, 200px);
+  padding: clamp(0.4rem, 1.5vw, 0.8rem) clamp(0.8rem, 3vw, 1.5rem);
+  font-size: clamp(0.8rem, 2.2vw, 1.1rem);
+}
+
+.contact-buttons.mobile-only .button-subtext {
+  font-size: clamp(0.5rem, 1.2vw, 0.7rem);
+  margin-top: clamp(0.1rem, 0.3vw, 0.3rem);
+}
+
+.contact-button {
+  display: inline-block;
+  padding: clamp(0.5rem, 2vw, 1rem) clamp(1rem, 4vw, 2rem);
+  background: linear-gradient(135deg, rgba(232, 219, 204, 0.9) 0%, rgba(245, 245, 220, 0.8) 100%);
+  color: #5C0023;
+  text-decoration: none;
+  border-radius: clamp(8px, 2vw, 20px);
+  font-family: 'Racama', serif;
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  font-weight: 600;
+  text-align: center;
+  border: 2px solid rgba(92, 0, 35, 0.2);
+  box-shadow: 0 4px 15px rgba(92, 0, 35, 0.1);
+  transition: all 0.3s ease;
+  width: clamp(150px, 35vw, 250px);
+  min-width: clamp(150px, 35vw, 250px);
+}
+
+.button-subtext {
+  font-size: clamp(0.6rem, 1.5vw, 0.8rem);
+  font-weight: 400;
+  font-style: italic;
+  color: #5C0023;
+  opacity: 0.7;
+  text-align: center;
+  line-height: 1.2;
+  margin-top: clamp(0.2rem, 0.5vw, 0.4rem);
+}
+
+.contact-button:hover {
+  background: linear-gradient(135deg, rgba(92, 0, 35, 0.1) 0%, rgba(232, 219, 204, 0.9) 100%);
+  border-color: rgba(92, 0, 35, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(92, 0, 35, 0.2);
+}
+
+.call-button {
+  background: linear-gradient(135deg, rgba(92, 0, 35, 0.1) 0%, rgba(232, 219, 204, 0.9) 100%);
+}
+
+.email-button {
+  background: linear-gradient(135deg, rgba(232, 219, 204, 0.9) 0%, rgba(245, 245, 220, 0.8) 100%);
+}
+
+/* Mobile responsiveness for wanna connect text and buttons */
+@media (max-width: 768px) {
+  .wanna-connect-text.desktop-only {
+    display: none;
+  }
+  
+  .wanna-connect-text.mobile-only {
+    display: block;
+  }
+  
+  .contact-buttons.desktop-only {
+    display: none;
+  }
+  
+  .contact-buttons.mobile-only {
+    display: flex;
+  }
+}
+
+@media (max-width: 700px), (max-aspect-ratio: 2/3), (orientation: portrait) {
+  .wanna-connect-text.desktop-only {
+    display: none;
+  }
+  
+  .wanna-connect-text.mobile-only {
+    display: block;
+  }
+  
+  .contact-buttons.desktop-only {
+    display: none;
+  }
+  
+  .contact-buttons.mobile-only {
+    display: flex;
+  }
+}
+
 /* Mobile responsiveness for sponsors */
 @media (max-width: 1024px) {
   .sponsors-grid {
@@ -1543,15 +1682,9 @@ html {
   }
   
   .contact-section {
-    top: 89.2% !important;
-    width: clamp(60px, 75%, 600px) !important;
-    transform: translateX(-50%) scale(0.6) !important;
-
+    display: none !important;
   }
   
-  .contact-card {
-    padding: clamp(0.15rem, 1.5vw, 1.5rem) !important;
-  }
   
   .social-media-section {
     top: 98.5% !important;
