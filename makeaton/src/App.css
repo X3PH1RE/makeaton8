@@ -1427,6 +1427,7 @@ html {
   position: absolute;
   left: 60%;
   top: 91.5%;
+  width: 100%;
   transform: translateX(-50%);
   font-family: 'Canicule', serif;
   color: #5C0023;
@@ -1452,6 +1453,11 @@ html {
   z-index: 1000;
 }
 
+.contact-buttons.desktop-only .contact-button {
+  width: 100%;
+  box-sizing: border-box;
+}
+
 /* Contact Buttons - Mobile */
 .contact-buttons.mobile-only {
   position: absolute;
@@ -1466,8 +1472,8 @@ html {
 }
 
 .contact-buttons.mobile-only .contact-button {
-  width: clamp(120px, 40vw, 200px);
-  min-width: clamp(120px, 40vw, 200px);
+  width: 100%;
+  box-sizing: border-box;
   padding: clamp(0.4rem, 1.5vw, 0.8rem) clamp(0.8rem, 3vw, 1.5rem);
   font-size: clamp(0.8rem, 2.2vw, 1.1rem);
 }
@@ -1491,8 +1497,6 @@ html {
   border: 2px solid rgba(92, 0, 35, 0.2);
   box-shadow: 0 4px 15px rgba(92, 0, 35, 0.1);
   transition: all 0.3s ease;
-  width: clamp(150px, 35vw, 250px);
-  min-width: clamp(150px, 35vw, 250px);
 }
 
 .button-subtext {
@@ -1504,6 +1508,7 @@ html {
   text-align: center;
   line-height: 1.2;
   margin-top: clamp(0.2rem, 0.5vw, 0.4rem);
+  white-space: nowrap;
 }
 
 .contact-button:hover {
@@ -1532,6 +1537,7 @@ html {
   margin-top: clamp(0.3rem, 1.2vw, 0.5rem);
   transition: all 0.3s ease;
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .previous-edition-link:hover {
@@ -1560,6 +1566,55 @@ html {
   }
 }
 
+/* Responsive positioning for smaller mobile screens */
+@media (max-width: 600px) {
+  .wanna-connect-text.mobile-only {
+    top: 91%;
+  }
+  
+  .contact-buttons.mobile-only {
+    top: 91.5%;
+    transform: translateX(-50%) scale(0.95);
+  }
+  
+  .contact-buttons.mobile-only .contact-button {
+    padding: clamp(0.3rem, 1.2vw, 0.6rem) clamp(0.6rem, 2.5vw, 1.2rem);
+    font-size: clamp(0.7rem, 2vw, 1rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .wanna-connect-text.mobile-only {
+    top: 88.5%;
+  }
+  
+  .contact-buttons.mobile-only {
+    top: 90%;
+    transform: translateX(-50%) scale(0.85);
+  }
+  
+  .contact-buttons.mobile-only .contact-button {
+    padding: clamp(0.25rem, 1vw, 0.5rem) clamp(0.5rem, 2vw, 1rem);
+    font-size: clamp(0.6rem, 1.8vw, 0.9rem);
+  }
+}
+
+@media (max-width: 360px) {
+  .wanna-connect-text.mobile-only {
+    top: 87%;
+  }
+  
+  .contact-buttons.mobile-only {
+    top: 88.5%;
+    transform: translateX(-50%) scale(0.75);
+  }
+  
+  .contact-buttons.mobile-only .contact-button {
+    padding: clamp(0.2rem, 0.8vw, 0.4rem) clamp(0.4rem, 1.5vw, 0.8rem);
+    font-size: clamp(0.5rem, 1.5vw, 0.8rem);
+  }
+}
+
 @media (max-width: 700px), (max-aspect-ratio: 2/3), (orientation: portrait) {
   .wanna-connect-text.desktop-only {
     display: none;
@@ -1567,6 +1622,7 @@ html {
   
   .wanna-connect-text.mobile-only {
     display: block;
+    top: 91%;
   }
   
   .contact-buttons.desktop-only {
@@ -1575,6 +1631,13 @@ html {
   
   .contact-buttons.mobile-only {
     display: flex;
+    top: 92.5%;
+    transform: translateX(-50%) scale(0.98);
+  }
+  
+  .contact-buttons.mobile-only .contact-button {
+    padding: clamp(0.35rem, 1.5vw, 0.7rem) clamp(0.7rem, 3vw, 1.3rem);
+    font-size: clamp(0.75rem, 2.2vw, 1.1rem);
   }
 }
 

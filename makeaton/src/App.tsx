@@ -455,32 +455,38 @@ function App() {
             <img src="/sponsors/Eduport.png" alt="Eduport" className="sponsor-logo" />
           </div>
           <div className="sponsor-item">
-            <img src="/sponsors/clusterdev.png" alt="ClusterDev" className="sponsor-logo" />
-          </div>
-          <div className="sponsor-item">
-            <img src="/sponsors/aws.png" alt="AWS" className="sponsor-logo" />
-          </div>
-          <div className="sponsor-item">
             <img src="/sponsors/orkes.png" alt="Orkes" className="sponsor-logo" />
           </div>
           <div className="sponsor-item">
-            <img src="/sponsors/agrivator.png" alt="Agrivator" className="sponsor-logo" />
+            <img src="/sponsors/logitech.png" alt="Logitech" className="sponsor-logo" />
+          </div>
+          <div className="sponsor-item">
+            <img src="/sponsors/clusterdev.png" alt="ClusterDev" className="sponsor-logo" />
+          </div>
+          <div className="sponsor-item">
+            <img src="/sponsors/github.png" alt="GitHub" className="sponsor-logo" />
+          </div>
+          <div className="sponsor-item">
+            <img src="/sponsors/cusat_tech.png" alt="CUSAT Tech" className="sponsor-logo" />
+          </div>
+          <div className="sponsor-item">
+            <img src="/sponsors/FossUnited.svg" alt="Foss United" className="sponsor-logo" />
+          </div>
+          <div className="sponsor-item">
+            <img src="/sponsors/SEAA.jpeg" alt="SEAA" className="sponsor-logo" />
+          </div>
+          <div className="sponsor-item">
+            <img src="/sponsors/GFG.png" alt="GFG" className="sponsor-logo" />
+          </div>
+          <div className="sponsor-item">
+            <img src="/sponsors/xena.png" alt="XENA" className="sponsor-logo" />
           </div>
           <div className="sponsor-item">
             <img src="/sponsors/mlh.png" alt="MLH" className="sponsor-logo" />
           </div>
           <div className="sponsor-item">
             <img src="/sponsors/balsamiq.png" alt="Balsamiq" className="sponsor-logo" />
-          </div>
-          <div className="sponsor-item">
-            <img src="/sponsors/logitech.png" alt="Logitech" className="sponsor-logo" />
-          </div>
-          <div className="sponsor-item">
-            <img src="/sponsors/cusat_tech.png" alt="CUSAT Tech" className="sponsor-logo" />
-          </div>
-          <div className="sponsor-item">
-            <img src="/sponsors/github.png" alt="GitHub" className="sponsor-logo" />
-          </div>
+          </div>         
           <div className="sponsor-item">
             <img src="/sponsors/INQ.png" alt="Inq" className="sponsor-logo" />
           </div>
@@ -488,14 +494,7 @@ function App() {
             <img src="/sponsors/Fulva-transparent.png" alt="Fulva" className="sponsor-logo" />
           </div>
           <div className="sponsor-item">
-            <img src="/sponsors/GeeksForGeeks.png" alt="GeeksForGeeks" className="sponsor-logo" />
-          </div>
-          
-          <div className="sponsor-item">
             <img src="/sponsors/Redbull.png" alt="Red Bull" className="sponsor-logo" />
-          </div>
-          <div className="sponsor-item">
-            <img src="/sponsors/xena.png" alt="Xena" className="sponsor-logo" />
           </div>
         </div>
       </div>
