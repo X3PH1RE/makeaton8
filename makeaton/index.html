@@ -4,6 +4,19 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/assets/makeaton brain.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function() {
+        var path = window.location.pathname.replace(/\/+
+$/,'');
+        if (path === '/hacktober') {
+          var dest = 'https://tally.so/r/31qRzW';
+          if (window.location.search || window.location.hash) {
+            dest += window.location.search + window.location.hash;
+          }
+          window.location.replace(dest);
+        }
+      })();
+    </script>
     
     <!-- Primary Meta Tags -->
     <title>Make-A-Ton 8.0 | South India's Biggest Hackathon | CUSAT</title>
