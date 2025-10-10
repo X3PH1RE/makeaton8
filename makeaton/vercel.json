@@ -4,8 +4,16 @@
       "source": "/hacktober",
       "destination": "https://tally.so/r/31qRzW",
       "permanent": true
+      
+    },
+    {
+      "source": "/gallery",
+      "destination": "https://www.playbook.com/s/makeaton/make-a-ton-8-0",
+      "permanent": true
+      
     }
   ]
 }
+
 
 
