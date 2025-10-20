@@ -11,6 +11,31 @@
       "destination": "https://www.playbook.com/s/makeaton/make-a-ton-8-0",
       "permanent": true
       
+    }, 
+    {
+      "source": "/insta",
+      "destination": "https://www.instagram.com/makeaton.cusat",
+      "permanent": true
+    },
+    {
+      "source": "/linkedin",
+      "destination": "https://www.linkedin.com/company/makeaton",
+      "permanent": true
+    },
+    {
+      "source": "/whatsapp",
+      "destination": "https://www.whatsapp.com/channel/0029ValGCQM60eBjNF5wS10C",
+      "permanent": true
+    },
+    {
+      "source": "/telegram",
+      "destination": "https://t.me/makeaton7",
+      "permanent": true
+    },
+    {
+      "source": "/x",
+      "destination": "https://x.com/MakeatonCusat",
+      "permanent": true
     }
   ]
 }
