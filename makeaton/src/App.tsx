@@ -1,12 +1,14 @@
 import './App.css'
 import { useEffect, useRef, useState } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import webviewImage from '../assets/webview prerelease.png'
 import mobileBgImage from '../assets/mobile prerelease.png'
 import kathakaliImage from '../assets/kathakali.png'
 import circleTextImage from '../assets/circle-text.png'
 import matLogo from '../assets/MAT new logo.png'
+import NotFound from './NotFound'
 
-function App() {
+function Home() {
   const cursorRef = useRef<HTMLDivElement>(null)
   const trailsRef = useRef<HTMLDivElement[]>([])
   const [useMobileBg, setUseMobileBg] = useState(false)
@@ -499,6 +501,15 @@ function App() {
         </div>
       </div>
     </div>
+  )
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   )
 }
 
