@@ -13,6 +13,12 @@
       
     }, 
     {
+      "source": "/gamenight",
+      "destination": "https://tally.so/r/Np5ZN0",
+      "permanent": true
+      
+    }, 
+    {
       "source": "/insta",
       "destination": "https://www.instagram.com/makeaton.cusat",
       "permanent": true
