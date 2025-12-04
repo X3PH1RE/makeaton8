@@ -42,6 +42,11 @@
       "source": "/x",
       "destination": "https://x.com/MakeatonCusat",
       "permanent": true
+    },
+    {
+      "source": "/ideawall",
+      "destination": "https://make-a-ton.github.io/The_Second_Commit/",
+      "permanent": true
     }
   ],
   "rewrites": [
