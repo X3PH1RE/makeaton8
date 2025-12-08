@@ -20,7 +20,7 @@ function Newsletter() {
         <div className="newsletter-header">
           <h1 className="newsletter-title">Stay in the Loop</h1>
           <p className="newsletter-subtitle">
-            Get the latest updates, announcements, and exclusive content from Make-A-Ton
+            Get the latest updates, announcements, and exclusive content from Make-A-Ton <br/>(and obv the tea too!)
           </p>
         </div>
         
