@@ -14,6 +14,22 @@ function Home() {
   const cursorRef = useRef<HTMLDivElement>(null)
   const trailsRef = useRef<HTMLDivElement[]>([])
   const [useMobileBg, setUseMobileBg] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  // Toggle body scroll when menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.classList.add('menu-open')
+      document.documentElement.classList.add('menu-open')
+    } else {
+      document.body.classList.remove('menu-open')
+      document.documentElement.classList.remove('menu-open')
+    }
+    return () => {
+      document.body.classList.remove('menu-open')
+      document.documentElement.classList.remove('menu-open')
+    }
+  }, [menuOpen])
 
   // Detect mobile/portrait or narrow aspect ratio to decide bg rendering
   useEffect(() => {
@@ -221,8 +237,60 @@ function Home() {
   }, [])
 
   return (
-    <div className="app-container">
-      <div ref={cursorRef} className="cursor"></div>
+    <>
+      {/* Navbar - Outside app-container to float independently */}
+      <nav className="navbar">
+        <button 
+          className={`menu-toggle ${menuOpen ? 'active' : ''}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span className="menu-bar"></span>
+          <span className="menu-bar"></span>
+          <span className="menu-bar"></span>
+        </button>
+        
+        {/* Overlay */}
+        <div 
+          className={`menu-overlay ${menuOpen ? 'open' : ''}`}
+          onClick={() => setMenuOpen(false)}
+        />
+        
+        <div className={`menu-dropdown ${menuOpen ? 'open' : ''}`}>
+          <a 
+            href="https://upsidedown.makeaton.in" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="menu-item"
+            onClick={() => setMenuOpen(false)}
+          >
+            Upside Down Hacknight
+          </a>
+          <a 
+            href="/gallery" 
+            className="menu-item"
+            onClick={() => setMenuOpen(false)}
+          >
+            Gallery
+          </a>
+          <a 
+            href="/newsletter" 
+            className="menu-item"
+            onClick={() => setMenuOpen(false)}
+          >
+            Newsletter
+          </a>
+          <span 
+            className="menu-item menu-item-coming-soon"
+          >
+            Projects made at MAT
+            <span className="coming-soon-tooltip">Coming Soon</span>
+          </span>
+        </div>
+      </nav>
+
+      <div className="app-container">
+        <div ref={cursorRef} className="cursor"></div>
       {!useMobileBg && (
         <img 
           src={webviewImage} 
@@ -502,7 +570,8 @@ function Home() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   )
 }
 
