@@ -8,6 +8,7 @@ import kathakaliImage from '../assets/kathakali.png'
 import circleTextImage from '../assets/circle-text.png'
 import matLogo from '../assets/MAT new logo.png'
 import NotFound from './NotFound'
+import Newsletter from './Newsletter'
 
 function Home() {
   const cursorRef = useRef<HTMLDivElement>(null)
@@ -510,6 +511,7 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/newsletter" element={<Newsletter />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Analytics />
