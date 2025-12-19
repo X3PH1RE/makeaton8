@@ -13,6 +13,11 @@
       
     }, 
     {
+      "source": "/upsidedownfeedback",
+      "destination": "https://tally.so/r/jabykR",
+      "permanent": true
+    },
+    {
       "source": "/callforproduction",
       "destination": "https://tally.so/r/jaalg4",
       "permanent": true
