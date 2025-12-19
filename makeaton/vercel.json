@@ -18,6 +18,11 @@
       "permanent": true
     },
     {
+      "source": "/upsidedowngallery",
+      "destination": "https://photos.app.goo.gl/ctgo3M3sZUH6hzDF8",
+      "permanent": true
+    },
+    {
       "source": "/callforproduction",
       "destination": "https://tally.so/r/jaalg4",
       "permanent": true
