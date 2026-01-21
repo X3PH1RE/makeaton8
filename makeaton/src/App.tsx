@@ -316,6 +316,16 @@ function Home() {
           Hackathon
         </span>
       </p>
+      
+      {/* Registration Button */}
+      <a 
+        href="https://makemypass.com/event/makeaton/" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="register-button"
+      >
+        Register Now
+      </a>
       <p className="festival-quote">
         If a hackathon<span className="hackathon-text"></span> could be a <span className="festival-text">Festival</span>,<br />
         it'd be <span className="make-a-ton-animated">Make-A-Ton</span>.
@@ -328,10 +338,10 @@ function Home() {
           This year, we’re rebranding and adding a <span className="about-accent">special twist</span> — a celebration of <span className="about-accent">Kerala’s vibrant culture</span> woven into the festival of innovation. Because why not blend tradition with tomorrow?
         </p>
         <p>
-          Recognized as <span className="about-chip">South India's Largest Hackathon</span>, Make-a-Ton is where technology, creativity, and community collide. With an exciting prize pool, cutting-edge gadgets, and coveted internship opportunities on the line, this is more than a hackathon — it’s <span className="about-accent">history in the making</span>.
+          Recognized as <span className="about-chip">South India's Largest Hackathon</span>, Make-A-Ton is where technology, creativity, and community collide. With an exciting prize pool, cutting-edge gadgets, and coveted internship opportunities on the line, this is more than a hackathon — it’s <span className="about-accent">history in the making</span>.
         </p>
         <p>
-          Proudly organized by CITTIC, Make-A-Ton 2025 is back, bigger and brighter than ever. And we want <span className="about-highlight">YOU</span> to be a part of it.
+          Proudly organized by CITTIC, Make-A-Ton 2026 is back, bigger and brighter than ever. And we want <span className="about-highlight">YOU</span> to be a part of it.
         </p>
       </div>
 
